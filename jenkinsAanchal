@@ -9,6 +9,7 @@ node {
    {
        sh "${mavH}/bin/mvn clean package"
    }
+   /*
    stage ('sonar Report')
    {
        sh "${mavH}/bin/mvn sonar:sonar"
@@ -24,6 +25,8 @@ node {
           sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.87.46.43:/opt/apache-tomcat-9.0.24/webapps/maven-web-application.war"
      }          
    }
+   
+   */
    stage ('email')
    {
        emailext body: '''Hi PFA
